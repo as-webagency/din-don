@@ -1,0 +1,35 @@
+
+.header
+    &--primary
+        background-color: $lightWhite
+        box-shadow: 0px 11px 45.54px 0.46px rgba($greyShadow, 0.25)
+    &__logo
+        width: 216px
+        height: 54px
+    &__content
+        +flex-wrap
+        justify-content: space-between
+    &__contacts
+        width: 100%
+        max-width: 530px
+.nav
+    &__list
+        list-style: none
+        +flex-wrap
+    &__item
+    &__link
+        color: $lightBlack
+        font-size: 18px
+        transition: .3s
+        &:hover
+            color: $lightBlue
+.contacts-head
+    +flex
+    &__button
+        max-width: 234px
+    &__phone
+        &::before
+            content: url('../img/phone-call.svg')
+            width: 20px
+            height: 20px
+            display: inline-block

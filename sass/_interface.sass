@@ -1,0 +1,37 @@
+.container
+    &__relative
+        position: relative
+.section
+    &__relative
+        position: relative
+.input
+    width: 100%
+    &::placeholder  
+        opacity: 1
+.custom-logo-link
+    display: block
+.button
+    &-head
+        font-family: 'Gilroy', sans-serif
+        font-weight: bold
+        +flex-content-center
+        font-size: 18px
+        border-radius: 6px
+        width: 100%
+        padding: 16px 44px
+        transition: .3s
+        &--outline
+            color: $lightBlue
+            background-color: transparent
+            border: 2px solid $lightBlue
+            &:hover
+                color: $white
+                background-color: $lightBlue
+.phone
+    font-weight: bold
+    font-size: 26px
+    transition: .3s
+    &--primary
+        color: $lightBlack
+        &:hover
+            color: $lightBlue
