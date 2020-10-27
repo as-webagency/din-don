@@ -1,0 +1,80 @@
+.hero
+    &__bg
+        background: url('../img/hero/bg.jpg') no-repeat
+        width: 100%
+        min-height: 1036px
+    &-side
+        &__left
+            padding-top: 228px
+            margin-left: 15px
+            position: relative
+            z-index: 5
+        &__title
+            font-weight: 600
+            font-size: 60px
+            line-height: 90px
+            color: $lightBlack
+            max-width: 700px
+        &__text
+            font-family: 'Gilroy', sans-serif
+            font-weight: 500
+            font-size: 24px
+            color: $grey
+            margin: -4px 0 69px 3px
+            span
+                font-family: 'Gilroy', sans-serif
+                color: $lightBlue
+                font-weight: bold
+        &__button
+            margin: 0 0 122px 5px
+            max-width: 395px
+            position: relative
+        &__right
+            background: url('../img/hero/hero-bg.png')  center no-repeat
+            width: 100%
+            max-width: 1910px
+            min-height: 1036px
+            position: absolute
+            top: 0
+            right: 0
+            opacity: .7
+.advans
+    display: flex
+    align-items: center
+    &-block
+        display: flex
+        align-items: center
+        &:nth-child(1)
+            .advans
+                &-block
+                    &__image
+                        position: relative
+                        top: 0
+                        left: -15px
+        &:nth-child(2)
+            .advans
+                &-block
+                    &__image
+                        position: relative
+                        top: 8px
+                        left: 48px
+                        margin-right: 24px
+        &:nth-child(3)
+            .advans
+                &-block
+                    &__image
+                        position: relative
+                        top: 0
+                        left: -15px
+                        margin-right: 1px
+        &__item
+            &:nth-child(3)
+                margin-left: 65px
+        &__image
+            max-width: 150px 
+        &__text
+            color: $lightBlack
+            display: inline-block
+            font-weight: 500
+            line-height: 22px
+            max-width: 80px

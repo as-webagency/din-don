@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <title>Дин-Дон</title>
-    <link rel="shortcut icon" href="./favicon/favicon.ico">
+    <link rel="shortcut icon" href="./favicon/favicon.png">
     <link rel="preload stylesheet" href="./css/style.css" as="style">
 </head>
 <body>
@@ -42,17 +42,127 @@
                     <button class="button-head contacts-head__button button-head--outline">Заказать звонок</button>
                     <a href="tel:+74996474066" class="phone contacts-head__phone phone--primary">+7 499 647 40 66</a>
                 </div>
+                <button class="burger header__burger">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
             </div>
         </div>
     </header>
     <main>
-        
+        <section class="hero hero__bg">
+            <div class="container">
+                <div class="hero-side">
+                    <div class="hero-side__left">
+                        <h1 class="hero-side__title">Купите кроватку-домик своим детям</h1>
+                        <p class="hero-side__text">по цене <span>на 30% ниже</span>, чем у конкурентов</p>
+                        <button class="button hero-side__button button--primary">
+                            <span class="button__icon"></span>
+                            <span class="button__text">Скачать каталог с ценами</span>
+                        </button>
+                        <div class="advans">
+                            <div class="advans-block advans-block__item">
+                                <img src="./img/hero/adv_01.png" data-src="./img/hero/adv_01.png" alt="adv_01" class="advans-block__image">
+                                <span class="advans-block__text">Собственное производство</span>
+                            </div>
+                            <div class="advans-block advans-block__item">
+                                <img src="./img/hero/adv_02.png" data-src="./img/hero/adv_02.png" alt="adv_02" class="advans-block__image">
+                                <span class="advans-block__text">Гарантия 5 лет</span>
+                            </div>
+                            <div class="advans-block advans-block__item">
+                                <img src="./img/hero/adv_03.png" data-src="./img/hero/adv_03.png" alt="adv_03" class="advans-block__image">
+                                <span class="advans-block__text">Всегда<br> в наличии</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-side__right"></div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="footer">
         <div class="container"></div>
     </footer>
 
+    <div class="overlay"></div>
+    <div class="popup popup-thanks">
+        <div class="popup-thanks__content">
+            <button class="popup-thanks__close"></button>
+            <div class="popup-thanks__title">Ожидайте, наш менеджер
+                скоро свяжется с Вами!</div>
+            <div class="popup-thanks__image">
+                <img src="./img/popup/circle.png" data-src="./img/popup/circle.png" alt="circle">
+            </div>
+            <a href="index.html" class="button popup-thanks__link button--primary">Спасибо!</a>
+        </div>
+    </div>
+    <div class="popup popup-download">
+        <div class="popup-download__content">
+            <button class="popup-download__close"></button>
+            <div class="popup-download__title">Скачайте каталог со всем
+                ассортиментом магазина</div>
+            <form action="#" class="form-download popup-download__form" method="POST">
+                <div class="form-download__group">
+                    <div class="form-download__icon"></div>
+                    <input type="text" class="input form-download__input input--primary" name="user_name" placeholder="Ваше имя">
+                </div>
+                <div class="form-download__group">
+                    <div class="form-download__icon"></div>
+                    <input type="tel" class="input form-download__input input--primary" name="user_phone" placeholder="Ваш номер телефона">
+                </div>
+                <button class="button form-download__button button--primary">
+                    <span class="button__text">Получить каталог с ценами</span>
+                </button>
+                <div class="form-download__group">
+                    <div class="policy">
+                        <input type="checkbox" class="policy__checkbox" id="policy-checkbox" name="user_checkbox" checked>
+                        <label for="policy-checkbox" class="policy__label">Вы соглашаетесь на&thinsp;<a href="#" class="policy__link">условия обработки персональных данных</a></label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup-call">
+        <div class="popup-call__content">
+            <button class="popup-call__close"></button>
+            <div class="popup-call__title">Оставьте свой номер телефона<br>
+                и мы перезвоним в течение 5 минут</div>
+            <form action="#" class="form-call popup-call__form" method="POST">
+                <div class="form-call__group">
+                    <div class="form-call__icon"></div>
+                    <input type="text" class="input form-call__input input--primary" name="user_name" placeholder="Ваше имя">
+                </div>
+                <div class="form-call__group">
+                    <div class="form-call__icon"></div>
+                    <input type="tel" class="input form-call__input input--primary" name="user_phone" placeholder="Ваш номер телефона">
+                </div>
+                <button class="button form-call__button button--primary">
+                    <span class="button__text">Оставить заявку</span>
+                </button>
+                <div class="form-call__group">
+                    <div class="policy">
+                        <input type="checkbox" class="policy__checkbox" id="policy-checkbox-call" name="user_checkbox" checked>
+                        <label for="policy-checkbox-call" class="policy__label">Вы соглашаетесь на&thinsp;<a href="#" class="policy__link">условия обработки персональных данных</a></label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery.min.js"></script>
+    <!-- src="" data- -->
+    <script>
+		function init() {
+			var imgDefer = document.getElementsByTagName( 'img' );
+			for ( var i = 0; i < imgDefer.length; i++ ) {
+				if ( imgDefer[i].getAttribute( 'data-src' ) ) {
+					imgDefer[i].setAttribute( 'src', imgDefer[i].getAttribute( 'data-src' ) );
+				} 
+			} 
+		}
+		window.onload = init;
+	</script>
     <script src="./js/script.js"></script>
 </body>
 </html>
