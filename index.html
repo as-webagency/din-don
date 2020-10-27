@@ -51,7 +51,7 @@
         </div>
     </header>
     <main>
-        <section class="hero hero__bg">
+        <section class="hero hero__bg" style="background-image: url('img/hero/bg.webp')" data-bg="img/hero/bg.jpg" data-bg-webp="img/hero/bg.webp">
             <div class="container">
                 <div class="hero-side">
                     <div class="hero-side__left">
@@ -63,25 +63,41 @@
                         </button>
                         <div class="advans">
                             <div class="advans-block advans-block__item">
-                                <img src="./img/hero/adv_01.png" data-src="./img/hero/adv_01.png" alt="adv_01" class="advans-block__image">
+                                <picture class="advans-block__image">
+                                    <source srcset="img/hero/adv_01.webp" type="image/webp">
+                                    <source srcset="img/hero/adv_01.png" type="image/png">
+                                    <img src="img/hero/adv_01.png" data-src="img/hero/adv_01.png" alt="adv_01">
+                                </picture>
                                 <span class="advans-block__text">Собственное производство</span>
                             </div>
                             <div class="advans-block advans-block__item">
-                                <img src="./img/hero/adv_02.png" data-src="./img/hero/adv_02.png" alt="adv_02" class="advans-block__image">
+                                <picture class="advans-block__image">
+                                    <source srcset="img/hero/adv_02.webp" type="image/webp">
+                                    <source srcset="img/hero/adv_02.png" type="image/png">
+                                    <img src="img/hero/adv_02.png" data-src="img/hero/adv_02.png" alt="adv_02">
+                                </picture>
                                 <span class="advans-block__text">Гарантия 5 лет</span>
                             </div>
                             <div class="advans-block advans-block__item">
-                                <img src="./img/hero/adv_03.png" data-src="./img/hero/adv_03.png" alt="adv_03" class="advans-block__image">
+                                <picture class="advans-block__image">
+                                    <source srcset="img/hero/adv_03.webp" type="image/webp">
+                                    <source srcset="img/hero/adv_03.png" type="image/png">
+                                    <img src="img/hero/adv_03.png" data-src="img/hero/adv_03.png" alt="adv_03">
+                                </picture>
                                 <span class="advans-block__text">Всегда<br> в наличии</span>
                             </div>
                         </div>
                     </div>
-                    <div class="hero-side__right"></div>
+                    <div class="hero-side__right" style="background-image: url('img/hero/hero-bg.webp')" data-bg="img/hero/hero-bg.png" data-bg-webp="img/hero/hero-bg.webp"></div>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="footer">
+    <footer class="footer footer__bg" style="background-image: url('img/map.webp')" data-bg="img/map.jpg" data-bg-webp="img/map.webp">
+        <div class="ymap-container">
+            <div class="loader loader-default"></div>
+            <div class="map" id="map-yandex"></div>
+        </div>
         <div class="container"></div>
     </footer>
 
@@ -92,12 +108,17 @@
             <div class="popup-thanks__title">Ожидайте, наш менеджер
                 скоро свяжется с Вами!</div>
             <div class="popup-thanks__image">
-                <img src="./img/popup/circle.png" data-src="./img/popup/circle.png" alt="circle">
+                <picture>
+                    <source srcset="img/popup/circle.webp" type="image/webp">
+                    <source srcset="img/popup/circle.png" type="image/png"> 
+                    <img src="img/popup/circle.png" data-src="img/popup/circle.png" alt="circle">
+                </picture>
             </div>
             <a href="index.html" class="button popup-thanks__link button--primary">Спасибо!</a>
         </div>
     </div>
     <div class="popup popup-download">
+        <div class="popup-download__image" style="background-image: url('img/popup/mocap.webp')" data-bg="img/popup/mocap.png" data-bg-webp="img/popup/mocap.webp"></div>
         <div class="popup-download__content">
             <button class="popup-download__close"></button>
             <div class="popup-download__title">Скачайте каталог со всем
@@ -124,6 +145,7 @@
         </div>
     </div>
     <div class="popup popup-call">
+        <div class="popup-call__image" style="background-image: url('img/popup/call.webp')" data-bg="img/popup/call.jpg" data-bg-webp="img/popup/call.webp"></div>
         <div class="popup-call__content">
             <button class="popup-call__close"></button>
             <div class="popup-call__title">Оставьте свой номер телефона<br>

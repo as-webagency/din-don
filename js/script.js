@@ -1,19 +1,150 @@
 'use strict';
 
-// const overlay = document.querySelector( '.overlay' );
-// const popupThanks = document.querySelector( '.popup-thanks' );
-// const contactsHeadButton = document.querySelector( '.contacts-head__button' );
-// const body = document.querySelector( 'body' );
+// Проверяем, можно ли использовать Webp формат
+function canUseWebp() {
+    // Создаем элемент canvas
+    let elem = document.createElement('canvas');
+    // Приводим элемент к булеву типу
+    if (!!(elem.getContext && elem.getContext('2d'))) {
+        // Создаем изображение в формате webp, возвращаем индекс искомого элемента и сразу же проверяем его
+        return elem.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+    }
+    // Иначе Webp не используем
+    return false;
+}
 
-// contactsHeadButton.addEventListener( 'click', ( event ) => {
-//     event.preventDefault();
-//     body.classList.add( 'scroll' );
+window.onload = function () {
+    // Получаем все элементы с дата-атрибутом data-bg
+    let images = document.querySelectorAll('[data-bg]');
+    // Проходимся по каждому
+    for (let i = 0; i < images.length; i++) {
+        // Получаем значение каждого дата-атрибута
+        let image = images[i].getAttribute('data-bg');
+        // Каждому найденному элементу задаем свойство background-image с изображение формата jpg
+        images[i].style.backgroundImage = 'url(' + image + ')';
+    }
 
-//     overlay.style.display = 'block';
-//     popupThanks.style.display = 'block';
-//     console.log(event);
+    // Проверяем, является ли браузер посетителя сайта Firefox и получаем его версию
+    let isitFirefox = window.navigator.userAgent.match(/Firefox\/([0-9]+)\./);
+    let firefoxVer = isitFirefox ? parseInt(isitFirefox[1]) : 0;
 
-//     if ( overlay ) {
-//         overlay.closest(false);
-//     }
-// });
+    // Если есть поддержка Webp или браузер Firefox версии больше или равно 65
+    if (canUseWebp() || firefoxVer >= 65) {
+        // Делаем все то же самое что и для jpg, но уже для изображений формата Webp
+        let imagesWebp = document.querySelectorAll('[data-bg-webp]');
+        for (let i = 0; i < imagesWebp.length; i++) {
+            let imageWebp = imagesWebp[i].getAttribute('data-bg-webp');
+            imagesWebp[i].style.backgroundImage = 'url(' + imageWebp + ')';
+        }
+    }
+};
+
+//Переменная для включения/отключения индикатора загрузки
+var spinner = $('.ymap-container').children('.loader');
+//Переменная для определения была ли хоть раз загружена Яндекс.Карта (чтобы избежать повторной загрузки при наведении)
+var check_if_load = false;
+//Необходимые переменные для того, чтобы задать координаты на Яндекс.Карте
+var myMapTemp, myPlacemarkTemp;
+//Функция создания карты сайта и затем вставки ее в блок с идентификатором &#34;map-yandex&#34;
+function init () {
+    var myMapTemp = new ymaps.Map("map-yandex", {
+        center: [55.808069100252716, 37.57470090080264], // координаты центра на карте
+        zoom: 17, // коэффициент приближения карты
+        controls: ['zoomControl', 'fullscreenControl'] // выбираем только те функции, которые необходимы при использовании
+    });
+    myMapTemp.behaviors.disable('scrollZoom');
+    var myPlacemarkTemp = new ymaps.Placemark([55.730138, 37.594238], {
+        balloonContent: "Здесь может быть ваш адрес",
+    }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#imageWithContent',
+        // Своё изображение иконки метки.
+        iconImageHref: 'img/pin.png',
+        // Размеры метки.
+        iconImageSize: [50, 50],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-25, -50],
+    });
+    myMapTemp.geoObjects.add(myPlacemarkTemp); // помещаем флажок на карту
+    // Получаем первый экземпляр коллекции слоев, потом первый слой коллекции
+    var layer = myMapTemp.layers.get(0).get(0);
+    // Решение по callback-у для определения полной загрузки карты
+    waitForTilesLoad(layer).then(function() {
+        // Скрываем индикатор загрузки после полной загрузки карты
+        spinner.removeClass('is-active');
+    });
+}
+// Функция для определения полной загрузки карты (на самом деле проверяется загрузка тайлов) 
+function waitForTilesLoad(layer) {
+    return new ymaps.vow.Promise(function (resolve, reject) {
+        var tc = getTileContainer(layer), readyAll = true;
+        tc.tiles.each(function (tile, number) {
+            if (!tile.isReady()) {
+                readyAll = false;
+            }
+        });
+            if (readyAll) {
+                resolve();
+            } else {
+        tc.events.once("ready", function() {
+            resolve();
+        });
+        }
+    });
+}
+function getTileContainer(layer) {
+    for (var k in layer) {
+        if (layer.hasOwnProperty(k)) {
+            if (
+                layer[k] instanceof ymaps.layer.tileContainer.CanvasContainer
+                || layer[k] instanceof ymaps.layer.tileContainer.DomContainer
+            ) {
+                return layer[k];
+            }
+        }
+    }
+    return null;
+}
+// Функция загрузки API Яндекс.Карт по требованию (в нашем случае при наведении)
+function loadScript(url, callback){
+    var script = document.createElement("script");
+ 
+    if (script.readyState){  // IE
+        script.onreadystatechange = function(){
+        if (script.readyState == "loaded" ||
+                script.readyState == "complete"){
+            script.onreadystatechange = null;
+            callback();
+        }
+        };
+    } else {  // Другие браузеры
+        script.onload = function(){
+        callback();
+        };
+    }
+    script.src = url;
+    document.getElementsByTagName("head")[0].appendChild(script);
+}
+// Основная функция, которая проверяет когда мы навели на блок с классом &#34;ymap-container&#34;
+var ymap = function() {
+    $('.ymap-container').mouseenter(function(){
+        if (!check_if_load) { // проверяем первый ли раз загружается Яндекс.Карта, если да, то загружаем
+	  	// Чтобы не было повторной загрузки карты, мы изменяем значение переменной
+        check_if_load = true; 
+		// Показываем индикатор загрузки до тех пор, пока карта не загрузится
+        spinner.addClass('is-active');
+		// Загружаем API Яндекс.Карт
+        loadScript("https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;loadByRequire=1", function(){
+           // Как только API Яндекс.Карт загрузились, сразу формируем карту и помещаем в блок с идентификатором &#34;map-yandex&#34;
+            ymaps.load(init);
+        });                
+        }
+    }
+    );  
+};
+$(function() {
+    //Запускаем основную функцию
+    ymap();
+});

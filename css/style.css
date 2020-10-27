@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'Gilroy';
   src: url("../fonts/Gilroy/Gilroy-Extrabold.eot");
@@ -788,7 +789,7 @@ button {
 }
 
 .hero__bg {
-  background: url("../img/hero/bg.jpg") no-repeat;
+  background-repeat: no-repeat;
   width: 100%;
   min-height: 1036px;
 }
@@ -829,7 +830,8 @@ button {
 }
 
 .hero-side__right {
-  background: url("../img/hero/hero-bg.png") center no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
   max-width: 1910px;
   min-height: 1036px;
@@ -891,6 +893,118 @@ button {
   font-weight: 500;
   line-height: 22px;
   max-width: 80px;
+}
+
+/* &#34;Блок-обертка&#34;, где мы задаем фоновое изображение скриншотом как на карте */
+.ymap-container {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: url("../img/map.jpg") no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* Блок, в котором появится Яндекс.Карта */
+#map-yandex {
+  position: relative;
+  z-index: 7;
+  width: 100%;
+  height: 838px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+/* Индикатор загрузки, который показывается до загрузки карты */
+.loader {
+  position: absolute;
+  z-index: 15;
+  top: -100%;
+  left: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #000000;
+  -webkit-transition: opacity .7s ease;
+  -o-transition: opacity .7s ease;
+  transition: opacity .7s ease;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.loader:after,
+.loader:before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.loader.is-active {
+  top: 0;
+  opacity: 1;
+}
+
+.loader-default:after {
+  position: absolute;
+  top: calc(50% - 24px);
+  left: calc(50% - 24px);
+  width: 48px;
+  height: 48px;
+  content: '';
+  -webkit-animation: rotation 1s linear infinite;
+          animation: rotation 1s linear infinite;
+  border: solid 8px #ffffff;
+  border-left-color: transparent;
+  border-radius: 50%;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@-webkit-keyframes blink {
+  from {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.footer__bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 838px;
 }
 
 .overlay {
@@ -991,9 +1105,8 @@ button {
   max-height: 100%;
 }
 
-.popup-download::after {
-  content: '';
-  background: url("../img/popup/mocap.png") center no-repeat;
+.popup-download__image {
+  background-repeat: no-repeat;
   max-width: 1019px;
   width: 100%;
   height: 810px;
@@ -1048,9 +1161,8 @@ button {
   max-height: 100%;
 }
 
-.popup-call::after {
-  content: '';
-  background: url("../img/popup/call.jpg") center no-repeat;
+.popup-call__image {
+  background-repeat: no-repeat;
   max-width: 382px;
   width: 100%;
   height: 677px;
