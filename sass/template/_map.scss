@@ -3,9 +3,9 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  background: url('img/map.jpg') no-repeat;
   background-position: center center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 /* Блок, в котором появится Яндекс.Карта */
 #map-yandex {

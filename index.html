@@ -8,7 +8,15 @@
     <meta name="keywords" content="">
     <title>Дин-Дон</title>
     <link rel="shortcut icon" href="./favicon/favicon.png">
-    <link rel="preload" href="./css/style.css" as="style">
+    <link rel="preload" href="./fonts/EuclidFlex/EuclidFlex-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="./fonts/EuclidFlex/EuclidFlex-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="./fonts/EuclidFlex/EuclidFlex-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="./fonts/EuclidFlex/EuclidFlex-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="./fonts/Gilroy/Gilroy-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="./fonts/Gilroy/Gilroy-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="./fonts/Gilroy/Gilroy-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="./fonts/Gilroy/Gilroy-Extrabold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="./fonts/Gilroy/Gilroy-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -93,7 +101,185 @@
                 </div>
             </div>
         </section>
-
+        <section class="quiz" id="find_a_bed">
+            <div class="container">
+                <h2 class="title quiz__title"><span>Ответьте на 4 простых вопроса</span>и узнайте, какая кровать подходит под ваши цели и бюджет</h2>
+                <span class="quiz__gift">+ подарок «....»</span>
+                <div class="quiz-blocks">
+                    <div class="quiz-block quiz-block__item">
+                        <div class="quiz-block__avatar">
+                            <picture>
+                                <source srcset="img/quiz/avatar.webp" type="image/webp">
+                                <source srcset="img/quiz/avatar.png" type="image/png">
+                                <img src="img/quiz/avatar.png" data-src="img/quiz/avatar.png" alt="avatar">
+                            </picture>
+                        </div>
+                        <div class="quiz-block__name">Алиса</div>
+                        <div class="quiz-block__online">
+                            <span>Мы онлайн</span>
+                        </div>
+                        <p class="quiz-block__text">Ответьте на 4 вопроса и я лично для вас выберу подходящую модель кроватки-домика</p>
+                        <div class="quiz-block__wrap">
+                            <picture class="quiz-block__picture">
+                                <source srcset="img/quiz/gift.webp" type="image/webp">
+                                <source srcset="img/quiz/gift.png" type="image/png">
+                                <img src="img/quiz/gift.png" data-src="img/quiz/gift.png" alt="gift">
+                            </picture>
+                            <span>Подарок забронирован</span>
+                        </div>
+                    </div>
+                    <div class="quiz-block quiz-block__item">
+                        <div class="quiz-block__image" style="background-image: url('img/popup/mocap.webp')" data-bg="img/popup/mocap.png" data-bg-webp="img/popup/mocap.webp"></div>
+                        <div class="quiz-count">
+                            <div class="quiz-count__number count-active">1</div>
+                            <div class="quiz-count__number">2</div>
+                            <div class="quiz-count__number">3</div>
+                            <div class="quiz-count__number">4</div>
+                        </div>
+                        <form action="#" class="form-quiz quiz-block__form" method="post">
+                            <fieldset class="form-quiz__fieldset" style="display: none;">
+                                <h3 class="form-quiz__title">Сколько спальных мест вам необходимо?</h3>
+                                <div class="form-quiz__wrap">
+                                    <div class="form-quiz__lab">
+                                        <label for="user_radio_1" class="form-quiz__label-radio active-radio">
+                                            <input type="radio" name="user_radio_1" id="user_radio_1" class="form-quiz__radio" value="Одно">
+                                            <div class="form-quiz__choise">
+                                                <picture class="form-quiz__image">
+                                                    <source srcset="img/quiz/quiz_1.webp" type="image/webp">
+                                                    <source srcset="img/quiz/quiz_1.png" type="image/png">
+                                                    <img src="img/quiz/quiz_1.png" data-src="img/quiz/quiz_1.png" alt="quiz_1">
+                                                </picture>
+                                            </div>
+                                        </label>
+                                        <div class="form-quiz__answer">Одно</div>
+                                    </div>
+                                    <div class="form-quiz__lab">
+                                        <label for="user_radio_2" class="form-quiz__label-radio">
+                                            <input type="radio" name="user_radio_1" id="user_radio_2" class="form-quiz__radio">
+                                            <div class="form-quiz__choise">
+                                                <picture class="form-quiz__image">
+                                                    <source srcset="img/quiz/quiz_2.webp" type="image/webp">
+                                                    <source srcset="img/quiz/quiz_2.png" type="image/png">
+                                                    <img src="img/quiz/quiz_2.png" data-src="img/quiz/quiz_2.png" alt="quiz_2" value="Два">
+                                                </picture>
+                                            </div>
+                                        </label>
+                                        <div class="form-quiz__answer">Два</div>
+                                    </div>
+                                    <button class="button form-quiz__button button--primary">
+                                        <span class="button__text">Следующий вопрос</span>
+                                    </button>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form-quiz__fieldset" style="display: none;">
+                                <h3 class="form-quiz__title">Каких размеров кровать вам нужна?</h3>
+                                <div class="form-quiz__wrap">
+                                    <div class="form-quiz__lab">
+                                        <label for="user_radio_3" class="form-quiz__label-radio active-radio">
+                                            <input type="radio" name="user_radio_2" id="user_radio_3" class="form-quiz__radio" value="160х80">
+                                            <div class="form-quiz__choise">
+                                                <picture class="form-quiz__image">
+                                                    <source srcset="img/quiz/1600.webp" type="image/webp">
+                                                    <source srcset="img/quiz/1600.jpg" type="image/jpg">
+                                                    <img src="img/quiz/1600.jpg" data-src="img/quiz/1600.jpg" alt="1600">
+                                                </picture>
+                                            </div>
+                                        </label>
+                                        <div class="form-quiz__answer">160х80</div>
+                                    </div>
+                                    <div class="form-quiz__lab">
+                                        <label for="user_radio_4" class="form-quiz__label-radio">
+                                            <input type="radio" name="user_radio_2" id="user_radio_4" class="form-quiz__radio">
+                                            <div class="form-quiz__choise">
+                                                <picture class="form-quiz__image">
+                                                    <source srcset="img/quiz/900.webp" type="image/webp">
+                                                    <source srcset="img/quiz/900.jpg" type="image/jpg">
+                                                    <img src="img/quiz/900.jpg" data-src="img/quiz/900.jpg" alt="900" value="180х90">
+                                                </picture>
+                                            </div>
+                                        </label>
+                                        <div class="form-quiz__answer">180х90</div>
+                                    </div>
+                                    <div class="form-quiz-btn">
+                                        <button class="button form-quiz__button button--primary">
+                                            <span class="button__text">Следующий вопрос</span>
+                                        </button>
+                                        <button class="form-quiz__button-prev">Предыдущий вопрос</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form-quiz__fieldset" style="display: none;">
+                                <h3 class="form-quiz__title">Сколько лет вашему ребёнку?</h3>
+                                <div class="form-quiz__wrap">
+                                    <div class="form-quiz__group active-checkbox">
+                                        <input type="checkbox" name="user_checkbox_1" id="checkbox_1" class="form-quiz__checkbox" value="До 3-х лет" checked>
+                                        <label for="checkbox_1" class="form-quiz__label-checkbox">До 3-х лет</label>
+                                    </div>
+                                    <div class="form-quiz__group">
+                                        <input type="checkbox" name="user_checkbox_2" id="checkbox_2" class="form-quiz__checkbox" value="3-7 лет">
+                                        <label for="checkbox_2" class="form-quiz__label-checkbox">3-7 лет</label>
+                                    </div>
+                                    <div class="form-quiz__group">
+                                        <input type="checkbox" name="user_checkbox_3" id="checkbox_3" class="form-quiz__checkbox" value="7-15 лет">
+                                        <label for="checkbox_3" class="form-quiz__label-checkbox">7-15 лет</label>
+                                    </div>
+                                    <div class="form-quiz__group">
+                                        <input type="checkbox" name="user_checkbox_4" id="checkbox_4" class="form-quiz__checkbox" value="15+ лет">
+                                        <label for="checkbox_4" class="form-quiz__label-checkbox">15+ лет</label>
+                                    </div>
+                                </div>
+                                <div class="form-quiz-btn">
+                                    <button class="button form-quiz__button button--primary">
+                                        <span class="button__text">Следующий вопрос</span>
+                                    </button>
+                                    <button class="form-quiz__button-prev">Предыдущий вопрос</button>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form-quiz__fieldset" style="display: none;">
+                                <h3 class="form-quiz__title">На какую сумму планируете купить кровать?</h3>
+                                <div class="form-quiz__column">
+                                    <div class="form-quiz__group active-checkbox">
+                                        <input type="checkbox" name="user_checkbox_3" id="checkbox_5" class="form-quiz__checkbox" value="до 15 000 рублей" checked>
+                                        <label for="checkbox_5" class="form-quiz__label-checkbox">до 15 000 рублей</label>
+                                    </div>
+                                    <div class="form-quiz__group">
+                                        <input type="checkbox" name="user_checkbox_4" id="checkbox_6" class="form-quiz__checkbox" value="до 30 000 рублей">
+                                        <label for="checkbox_6" class="form-quiz__label-checkbox">до 30 000 рублей</label>
+                                    </div>
+                                </div>
+                                <div class="form-quiz-btn">
+                                    <button class="button form-quiz__button button--primary">
+                                        <span class="button__text">Следующий вопрос</span>
+                                    </button>
+                                    <button class="form-quiz__button-prev">Предыдущий вопрос</button>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form-quiz__fieldset" style="display: block;">
+                                <div class="send-mail">
+                                    <div class="send-mail__step">Последний шаг!</div>
+                                    <div class="send-mail__title">Введите контактные данные, 
+                                        чтобы получить подборку</div>
+                                    <div class="send-mail__form">
+                                        <div class="send-mail__group">
+                                            <div class="send-mail__icon"></div>
+                                            <input type="email" name="user_email" class="input send-mail__input input--primary" placeholder="Ваш e-mail">
+                                        </div>
+                                        <div class="send-mail__group">
+                                            <div class="send-mail__icon"></div>
+                                            <input type="tel" name="user_phone" class="input send-mail__input input--primary" placeholder="Ваш номер телефона">
+                                        </div>
+                                        <button class="button send-mail__button button--primary">
+                                            <span>Получить подборку</span>
+                                            <span>+ закрепить за собой подарок подушку</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="footer footer__bg" style="background-image: url('img/map.webp')" data-bg="img/map.jpg" data-bg-webp="img/map.webp">
         <div class="ymap-container">
