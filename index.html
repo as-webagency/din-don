@@ -8,7 +8,8 @@
     <meta name="keywords" content="">
     <title>Дин-Дон</title>
     <link rel="shortcut icon" href="./favicon/favicon.png">
-    <link rel="preload stylesheet" href="./css/style.css" as="style">
+    <link rel="preload" href="./css/style.css" as="style">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     
@@ -92,6 +93,7 @@
                 </div>
             </div>
         </section>
+
     </main>
     <footer class="footer footer__bg" style="background-image: url('img/map.webp')" data-bg="img/map.jpg" data-bg-webp="img/map.webp">
         <div class="ymap-container">
@@ -142,7 +144,9 @@
                     <img src="img/popup/circle.png" data-src="img/popup/circle.png" alt="circle">
                 </picture>
             </div>
-            <a href="index.html" class="button popup-thanks__link button--primary">Спасибо!</a>
+            <a href="index.html" class="button popup-thanks__link button--primary">
+                <span>Спасибо!</span>
+            </a>
         </div>
     </div>
     <div class="popup popup-download">
@@ -151,7 +155,7 @@
             <button class="popup-download__close"></button>
             <div class="popup-download__title">Скачайте каталог со всем
                 ассортиментом магазина</div>
-            <form action="#" class="form-download popup-download__form" method="POST">
+            <form action="send.php" class="form-download popup-download__form" method="POST">
                 <div class="form-download__group">
                     <div class="form-download__icon"></div>
                     <input type="text" class="input form-download__input input--primary" name="user_name" placeholder="Ваше имя">
@@ -178,7 +182,7 @@
             <button class="popup-call__close"></button>
             <div class="popup-call__title">Оставьте свой номер телефона<br>
                 и мы перезвоним в течение 5 минут</div>
-            <form action="#" class="form-call popup-call__form" method="POST">
+            <form action="send.php" class="form-call popup-call__form" method="POST">
                 <div class="form-call__group">
                     <div class="form-call__icon"></div>
                     <input type="text" class="input form-call__input input--primary" name="user_name" placeholder="Ваше имя">

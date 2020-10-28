@@ -444,7 +444,7 @@ body {
   font-weight: normal;
 }
 
-body.scroll {
+body.no_scroll {
   overflow: hidden;
 }
 
@@ -678,6 +678,15 @@ button {
   background: url(../img/checked.svg) center/contain no-repeat;
 }
 
+#user_name-error,
+#user_phone-error {
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  font-size: 14px;
+  color: red;
+}
+
 .header {
   padding: 50px 0 47px;
   position: fixed;
@@ -900,7 +909,7 @@ button {
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  background: url("../img/map.jpg") no-repeat;
+  background: url("img/map.jpg") no-repeat;
   background-position: center center;
   background-size: cover;
 }
@@ -1207,12 +1216,17 @@ button {
 .popup-thanks__link {
   display: block;
   text-align: center;
-  font-family: 'Gilroy', sans-serif;
-  font-weight: 800;
-  font-size: 20px;
   max-width: 348px;
   margin: 0 auto;
   position: relative;
+}
+
+.popup-thanks__link span {
+  position: relative;
+  z-index: 3;
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
 }
 
 .popup-download {
