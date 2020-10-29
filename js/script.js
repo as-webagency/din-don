@@ -223,10 +223,18 @@ function formValidate(forms) {
                 required: !0,
                 minlength: 17
             },
+            user_email: {
+                required: true,
+                email: true
+            },
         },
         messages: {
             user_name: "Введите имя",
-            user_phone: "Введите телефон"
+            user_phone: "Введите телефон",
+            user_email: {
+                required: "Введите email",
+                email: "Введите в формате: name@domain.com"
+            },
         },
         submitHandler: function(forms) {
             $.ajax({

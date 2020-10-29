@@ -136,33 +136,33 @@
                             <div class="quiz-count__number">3</div>
                             <div class="quiz-count__number">4</div>
                         </div>
-                        <form action="#" class="form-quiz quiz-block__form" method="post">
+                        <form action="send.php" class="form-quiz quiz-block__form" method="post">
                             <fieldset class="form-quiz__fieldset" style="display: block;">
                                 <h3 class="form-quiz__title">Сколько спальных мест вам необходимо?</h3>
                                 <div class="form-quiz__wrap">
                                     <div class="form-quiz__lab">
                                         <label for="user_radio_1" class="form-quiz__label-radio active-radio">
                                             <input type="radio" name="user_radio_1" id="user_radio_1" class="form-quiz__radio" value="Одно">
-                                            <div class="form-quiz__choise">
+                                            <span class="form-quiz__choise">
                                                 <picture class="form-quiz__image">
                                                     <source srcset="img/quiz/quiz_1.webp" type="image/webp">
                                                     <source srcset="img/quiz/quiz_1.png" type="image/png">
                                                     <img src="img/quiz/quiz_1.png" data-src="img/quiz/quiz_1.png" alt="quiz_1">
                                                 </picture>
-                                            </div>
+                                            </span>
                                         </label>
                                         <div class="form-quiz__answer">Одно</div>
                                     </div>
                                     <div class="form-quiz__lab">
                                         <label for="user_radio_2" class="form-quiz__label-radio">
-                                            <input type="radio" name="user_radio_1" id="user_radio_2" class="form-quiz__radio">
-                                            <div class="form-quiz__choise">
+                                            <input type="radio" name="user_radio_1" id="user_radio_2" class="form-quiz__radio" value="Два">
+                                            <span class="form-quiz__choise">
                                                 <picture class="form-quiz__image">
                                                     <source srcset="img/quiz/quiz_2.webp" type="image/webp">
                                                     <source srcset="img/quiz/quiz_2.png" type="image/png">
-                                                    <img src="img/quiz/quiz_2.png" data-src="img/quiz/quiz_2.png" alt="quiz_2" value="Два">
+                                                    <img src="img/quiz/quiz_2.png" data-src="img/quiz/quiz_2.png" alt="quiz_2">
                                                 </picture>
-                                            </div>
+                                            </span>
                                         </label>
                                         <div class="form-quiz__answer">Два</div>
                                     </div>
@@ -177,26 +177,26 @@
                                     <div class="form-quiz__lab">
                                         <label for="user_radio_3" class="form-quiz__label-radio active-radio">
                                             <input type="radio" name="user_radio_2" id="user_radio_3" class="form-quiz__radio" value="160х80">
-                                            <div class="form-quiz__choise">
+                                            <span class="form-quiz__choise">
                                                 <picture class="form-quiz__image">
                                                     <source srcset="img/quiz/1600.webp" type="image/webp">
                                                     <source srcset="img/quiz/1600.jpg" type="image/jpg">
                                                     <img src="img/quiz/1600.jpg" data-src="img/quiz/1600.jpg" alt="1600">
                                                 </picture>
-                                            </div>
+                                            </span>
                                         </label>
                                         <div class="form-quiz__answer">160х80</div>
                                     </div>
                                     <div class="form-quiz__lab">
                                         <label for="user_radio_4" class="form-quiz__label-radio">
-                                            <input type="radio" name="user_radio_2" id="user_radio_4" class="form-quiz__radio">
-                                            <div class="form-quiz__choise">
+                                            <input type="radio" name="user_radio_2" id="user_radio_4" class="form-quiz__radio" value="180х90">
+                                            <span class="form-quiz__choise">
                                                 <picture class="form-quiz__image">
                                                     <source srcset="img/quiz/900.webp" type="image/webp">
                                                     <source srcset="img/quiz/900.jpg" type="image/jpg">
-                                                    <img src="img/quiz/900.jpg" data-src="img/quiz/900.jpg" alt="900" value="180х90">
+                                                    <img src="img/quiz/900.jpg" data-src="img/quiz/900.jpg" alt="900">
                                                 </picture>
-                                            </div>
+                                            </span>
                                         </label>
                                         <div class="form-quiz__answer">180х90</div>
                                     </div>
@@ -268,7 +268,7 @@
                                             <div class="send-mail__icon"></div>
                                             <input type="tel" name="user_phone" class="input send-mail__input input--primary" placeholder="Ваш номер телефона">
                                         </div>
-                                        <button class="button send-mail__button button--primary">
+                                        <button class="button send-mail__button button--primary" type="submit">
                                             <span>Получить подборку</span>
                                             <span>+ закрепить за собой подарок подушку</span>
                                         </button>
@@ -276,6 +276,39 @@
                                 </div>
                             </fieldset>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="benefits" id="benefits">
+            <div class="container">
+                <h2 class="title benefits__title"></h2>
+                <p class="benefits__subtitle"></p>
+                <div class="benefits-block">
+                    <div class="benefits-block__left">
+                        <div class="benefits-block__wrapper">
+                            <div class="benefits-block__number"></div>
+                            <h3 class="benefits-block__title"></h3>
+                            <p class="benefits-block__text"></p>
+                        </div>
+                        <div class="benefits-block__wrapper">
+                            <div class="benefits-block__number"></div>
+                            <h3 class="benefits-block__title"></h3>
+                            <p class="benefits-block__text"></p>
+                        </div>
+                    </div>
+                    <div class="benefits-block__center"></div>
+                    <div class="benefits-block__right">
+                        <div class="benefits-block__wrapper">
+                            <div class="benefits-block__number"></div>
+                            <h3 class="benefits-block__title"></h3>
+                            <p class="benefits-block__text"></p>
+                        </div>
+                        <div class="benefits-block__wrapper">
+                            <div class="benefits-block__number"></div>
+                            <h3 class="benefits-block__title"></h3>
+                            <p class="benefits-block__text"></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -350,7 +383,7 @@
                     <div class="form-download__icon"></div>
                     <input type="tel" class="input form-download__input input--primary" name="user_phone" placeholder="Ваш номер телефона">
                 </div>
-                <button class="button form-download__button button--primary">
+                <button class="button form-download__button button--primary" type="submit">
                     <span class="button__text">Получить каталог с ценами</span>
                 </button>
                 <div class="form-download__group">
@@ -377,7 +410,7 @@
                     <div class="form-call__icon"></div>
                     <input type="tel" class="input form-call__input input--primary" name="user_phone" placeholder="Ваш номер телефона">
                 </div>
-                <button class="button form-call__button button--primary">
+                <button class="button form-call__button button--primary" type="submit">
                     <span class="button__text">Оставить заявку</span>
                 </button>
                 <div class="form-call__group">
