@@ -5,8 +5,16 @@ require 'phpmailer/SMTP.php';
 require 'phpmailer/Exception.php';
 
 // Переменные, которые отправляет пользователь
-if (isset($_POST['user_name']) or !empty($_POST['user_name'])) {
-    $userName = $_POST['user_name'];
+$data = file_get_contents('php://input');
+$json = json_decode($data, true);
+
+$mes0 = "\n\n" . $json["step0"]["question"] . ': ' . implode(', ', $json["step0"]["answers"]);
+$mes1 = "\n\n" . $json["step1"]["question"] . ': ' . implode(', ', $json["step1"]["answers"]);
+$mes2 = "\n\n" . $json["step2"]["question"] . ': ' . implode(', ', $json["step2"]["answers"]);
+$mes3 = "\n\n" . $json["step3"]["question"] . ': ' . implode(', ', $json["step3"]["answers"]);
+
+if (isset($_POST['user_email']) or !empty($_POST['user_email'])) {
+    $userEmail = $_POST['user_email'];
 }
 
 if (isset($_POST['user_phone']) or !empty($_POST['user_phone'])) {
@@ -14,11 +22,15 @@ if (isset($_POST['user_phone']) or !empty($_POST['user_phone'])) {
 }
 
 // Формирование самого письма
-$title = "Din Don";
+$title = "Квиз - Din Don";
 $body = "
-<h2>Новое письмо с сайта - Din Don</h2>
-<b>Имя:</b> $userName<br>
-<b>Телефон:</b> $userPhone<br>
+<h2>Новое письмо с квиза - Din Don</h2>
+<b>$mes0</b> <br>
+<b>$mes1</b> <br>
+<b>$mes2</b> <br>
+<b>$mes3</b> <br>
+<b>E-mail:</b> <br>
+<b>Телефон:</b> $userPhone <br>
 ";
 
 // Настройки PHPMailer

@@ -136,7 +136,7 @@
                             <div class="quiz-count__number">3</div>
                             <div class="quiz-count__number">4</div>
                         </div>
-                        <form action="send.php" class="form-quiz quiz-block__form" method="post">
+                        <form action="quiz-send.php" class="form-quiz quiz-block__form" method="post">
                             <fieldset class="form-quiz__fieldset" style="display: block;">
                                 <h3 class="form-quiz__title">Сколько спальных мест вам необходимо?</h3>
                                 <div class="form-quiz__wrap">
@@ -262,11 +262,11 @@
                                     <div class="send-mail__form">
                                         <div class="send-mail__group">
                                             <div class="send-mail__icon"></div>
-                                            <input type="email" name="user_email" class="input send-mail__input input--primary" placeholder="Ваш e-mail">
+                                            <input type="email" name="user_email" class="input send-mail__input input--primary" id="quiz-email" placeholder="Ваш e-mail">
                                         </div>
                                         <div class="send-mail__group">
                                             <div class="send-mail__icon"></div>
-                                            <input type="tel" name="user_phone" class="input send-mail__input input--primary" placeholder="Ваш номер телефона">
+                                            <input type="tel" name="user_phone" class="input send-mail__input input--primary" id="quiz-phone" placeholder="Ваш номер телефона">
                                         </div>
                                         <button class="button send-mail__button button--primary" type="submit">
                                             <span>Получить подборку</span>
@@ -333,6 +333,79 @@
                         <p class="benefits-publicity__text">В результате потраченных 12-20 тысяч на детскую кровать из сосны хватит <span>на 1 год использования</span></p>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="cards">
+            <div class="container">
+                <h2 class="title cards__title"><span>За 5 лет производства</span> мы научились изготавливать детские <span>кровати высокого качества по оптимальной цене</span></h2>
+                <p class="cards__subtitle">Для наших кроватей мы выбираем массив берёзы</p>
+                <div class="cards-blocks">
+                    <div class="cards-block cards-block__item cards-block--primary">
+                        <picture class="cards-block__image">
+                            <source srcset="img/cards/card_1.webp" type="image/webp">
+                            <source srcset="img/cards/card_1.png" type="image/png">
+                            <img src="img/cards/card_1.png" data-src="img/cards/card_1.png" alt="card_1">
+                        </picture>
+                        <h3 class="cards-block__title">Берёза безопасна для аллергиков</h3>
+                        <p class="cards-block__text">Древесина экологически чиста, она
+                            почти не источает запахов, поэтому
+                            <span>благотворно влияет на здоровье детей</span>
+                            и способствует лёгкому засыпанию.</p>
+                        <div class="cards-block__number">01</div>
+                    </div>
+                    <div class="cards-block cards-block__item cards-block--primary">
+                        <picture class="cards-block__image">
+                            <source srcset="img/cards/card_2.webp" type="image/webp">
+                            <source srcset="img/cards/card_2.png" type="image/png">
+                            <img src="img/cards/card_2.png" data-src="img/cards/card_2.png" alt="card_2">
+                        </picture>
+                        <h3 class="cards-block__title">Берёза гораздо крепче сосны</h3>
+                        <p class="cards-block__text">Кровать <span>выдерживает до 220 кг.</span>
+                            На ней можно спокойно прыгать и подтягиваться даже вместе с папой.</p>
+                        <div class="cards-block__number">02</div>
+                    </div>
+                    <div class="cards-block cards-block__item cards-block--primary">
+                        <picture class="cards-block__image">
+                            <source srcset="img/cards/card_3.webp" type="image/webp">
+                            <source srcset="img/cards/card_3.png" type="image/png">
+                            <img src="img/cards/card_3.png" data-src="img/cards/card_3.png" alt="card_3">
+                        </picture>
+                        <h3 class="cards-block__title">Долгий срок службы</h3>
+                        <p class="cards-block__text">Благодаря своей прочности
+                            и устойчивости  кровать <span>до
+                                совершеннолетия ваших
+                                детей будет как новая.</span></p>
+                        <div class="cards-block__number">03</div>
+                    </div>
+                    <div class="cards-block cards-block__item cards-block--primary">
+                        <picture class="cards-block__image">
+                            <source srcset="img/cards/card_4.webp" type="image/webp">
+                            <source srcset="img/cards/card_4.png" type="image/png">
+                            <img src="img/cards/card_4.png" data-src="img/cards/card_4.png" alt="card_4">
+                        </picture>
+                        <h3 class="cards-block__title">Устойчивое покрытие</h3>
+                        <p class="cards-block__text">Мы используем гипоаллергенную краску,
+                            которая устойчива к истиранию. На ней
+                            <span>можно даже рисовать фломастером,</span>
+                            а потом легко стирать детские рисунки.</p>
+                        <div class="cards-block__number">04</div>
+                    </div>
+                </div>
+                <div class="cards-publicity">
+                    <div class="cards-publicity__box">
+                        <p class="cards-publicity__text">Кровати из берёзы стоят на 30-60% дороже, чем из сосны. Но за счёт серийного производства нам удалось сделать  <span>цену как у сосны</span></p>
+                    </div>
+                </div>
+                <p class="cards__catalog">Скачайте каталог и узнайте, сколько будет стоить кроватка мечты для вашего ребёнка</p>
+                <button class="button cards__button button--primary">
+                    <span class="button__icon"></span>
+                    <span class="button__text">Скачать каталог с ценами</span>
+                </button>
+            </div>
+        </section>
+        <section class="for">
+            <div class="container">
+                
             </div>
         </section>
     </main>
@@ -445,8 +518,10 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery.min.js"></script>
     <!-- src="" data- -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="./js/quiz.js"></script>
+    <script src="./js/script.js"></script>
     <script>
 		function init() {
 			var imgDefer = document.getElementsByTagName( 'img' );
@@ -458,6 +533,5 @@
 		}
 		window.onload = init;
 	</script>
-    <script src="./js/script.js"></script>
 </body>
 </html>
