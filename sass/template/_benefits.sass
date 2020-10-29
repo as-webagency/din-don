@@ -1,0 +1,174 @@
+.benefits
+    padding: 90px 0 150px
+    &__title
+        max-width: 1200px
+        margin: 4px auto 44px
+    &__subtitle
+        font-family: 'Gilroy', sans-serif
+        font-weight: 500
+        text-align: center
+        font-size: 20px
+        line-height: 30px
+        color: $grey
+        max-width: 700px
+        margin: 0 auto 40px
+    &-block
+        +flex-wrap
+        justify-content: space-between
+        &__left
+            .benefits
+                &-block
+                    &__wrapper
+                        &:nth-child(1)
+                            margin-bottom: 280px
+                            .benefits
+                                &-block
+                                    &__line
+                                        max-width: 361px
+                                        height: 67px
+                                        transform: translate(158px, 34px)
+                                    &__close
+                                        transform: translate(75px, 75px)
+                                        right: 0
+                        &:nth-child(2)
+                            .benefits
+                                &-block
+                                    &__line
+                                        max-width: 391px
+                                        height: 42px
+                                        transform: translate(134px, -7px)
+                                    &__close
+                                        transform: translate(87px, 76px)
+                                        right: 0
+                                        top: 45px
+                    &__number
+                        top: -80px
+                        left: 14px
+                    &__title
+                        margin: 82px 0 22px 114px
+                    &__text
+                        margin: 0 0 0 114px
+        &__right
+            .benefits
+                &-block
+                    &__wrapper
+                        &:nth-child(1)
+                            margin-bottom: 255px
+                            .benefits
+                                &-block
+                                    &__line
+                                        max-width: 373px
+                                        height: 36px
+                                        transform: translate(-84px, 34px)
+                                    &__close
+                                        transform: translate(-116px, 104px)
+                                        left: 0
+                                        bottom: 0
+                        &:nth-child(2)
+                            .benefits
+                                &-block
+                                    &__line
+                                        max-width: 374px
+                                        height: 43px
+                                        transform: translate(-104px, 16px)
+                                    &__close
+                                        transform: translate(-132px, 47px)
+                                        left: 0
+                                        bottom: 0
+                    &__number
+                        top: -80px
+                        left: -75px
+                    &__title
+                        margin: 84px 0 20px 17px
+                    &__text
+                        transform: translateX(18px)
+        &__wrapper
+            position: relative
+        &__number
+            font-family: 'Gilroy', sans-serif
+            font-weight: 800
+            color: rgba($lightBlue, .2)
+            font-size: 135px
+            position: absolute
+            top: 0
+            left: 0
+        &__title  
+            font-size: 24px
+            font-weight: 500
+            line-height: 27px
+            color: $lightBlack
+        &__text
+            font-family: 'Gilroy', sans-serif
+            font-weight: 500
+            font-size: 18px
+            line-height: 27px
+            color: $grey
+            max-width: 355px
+            span
+                font-weight: bold
+                color: $lightRed
+        &__border
+            background-repeat: no-repeat
+            max-width: 320px
+            min-height: 90px
+            margin: 86px 0 0 0
+            padding: 16px
+            transform: translateX(-48px)
+        &__txt
+            font-family: 'Gilroy', sans-serif
+            font-size: 16px
+            line-height: 22px
+            color: $lightBlack
+            font-weight: 500
+            text-align: center
+            span
+                font-weight: bold
+                color: $lightRed
+        &__image
+            max-width: 645px
+            min-width: 645px
+            width: 100%
+            min-height: 623px
+            background-repeat: no-repeat
+            background-position: center
+            background-size: cover
+            position: absolute
+            top: 110px
+            transform: translateX(-29%)
+        &__line
+            background-repeat: no-repeat
+            width: 100%
+            position: absolute
+            z-index: 10
+        &__close
+            background-repeat: no-repeat
+            width: 56px
+            height: 56px
+            position: absolute
+            background-position: center
+            z-index: 15
+    &-publicity
+        &__box
+            background-color: $publicity
+            margin: 238px auto 0
+            max-width: 696px
+            padding: 25px 60px
+            border-radius: 6px
+            position: relative
+            &::before
+                content: ''
+                position: absolute
+                top: 0
+                left: 0
+                width: 11px
+                height: 122px
+                background-color: $lightBlue
+                border-radius: 6px
+        &__text
+            font-family: 'Gilroy', sans-serif
+            font-size: 24px
+            line-height: 36px
+            color: $lightBlack
+            font-weight: 500
+            span
+                font-weight: bold
