@@ -12,14 +12,8 @@ $mes0 = "\n\n" . $json["step0"]["question"] . ': ' . implode(', ', $json["step0"
 $mes1 = "\n\n" . $json["step1"]["question"] . ': ' . implode(', ', $json["step1"]["answers"]);
 $mes2 = "\n\n" . $json["step2"]["question"] . ': ' . implode(', ', $json["step2"]["answers"]);
 $mes3 = "\n\n" . $json["step3"]["question"] . ': ' . implode(', ', $json["step3"]["answers"]);
-
-if (isset($_POST['user_email']) or !empty($_POST['user_email'])) {
-    $userEmail = $_POST['user_email'];
-}
-
-if (isset($_POST['user_phone']) or !empty($_POST['user_phone'])) {
-    $userPhone = $_POST['user_phone'];
-}
+$phone = "\n\n" . $json["step4"]["phone"];
+$email = "\n\n" . $json["step4"]["email"];
 
 // Формирование самого письма
 $title = "Квиз - Din Don";
@@ -29,8 +23,8 @@ $body = "
 <b>$mes1</b> <br>
 <b>$mes2</b> <br>
 <b>$mes3</b> <br>
-<b>E-mail:</b> <br>
-<b>Телефон:</b> $userPhone <br>
+<b>E-mail:</b> $email <br>
+<b>Телефон:</b> $phone <br>
 ";
 
 // Настройки PHPMailer
@@ -46,9 +40,10 @@ try {
     $mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
     $mail->Username   = 'semenovaleksandr407@gmail.com'; // Логин на почте
     $mail->Password   = '242175rko1992'; // Пароль на почте
+
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
-    $mail->setFrom('semenovaleksandr407@gmail.com', 'Din Don'); // Адрес самой почты и имя отправителя
+    $mail->setFrom('sniper.semenov@ukr.net', 'Din Don'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
     $mail->addAddress('sniper.semenov@ukr.net');

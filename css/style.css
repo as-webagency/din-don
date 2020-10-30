@@ -2368,6 +2368,64 @@ button {
   margin-right: -22px;
 }
 
+.avto {
+  padding: 160px 0 100px;
+  position: relative;
+}
+
+.avto-blocks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+}
+
+.avto-block__item:nth-child(1) {
+  position: relative;
+  z-index: 10;
+  margin-left: 68px;
+}
+
+.avto-block__title {
+  text-align: left;
+  max-width: 720px;
+  margin-bottom: 62px;
+}
+
+.avto-block__text {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 500;
+  max-width: 380px;
+  font-size: 20px;
+  line-height: 30px;
+  color: #757575;
+  margin-bottom: 77px;
+}
+
+.avto-block__button {
+  position: relative;
+  max-width: 410px;
+}
+
+.avto-block__button span {
+  position: relative;
+  z-index: 3;
+  margin: 0 auto;
+}
+
+.avto-side__image {
+  background-repeat: no-repeat;
+  max-width: 1292px;
+  width: 100%;
+  min-height: 898px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-position: 6px 105px;
+}
+
 /* &#34;Блок-обертка&#34;, где мы задаем фоновое изображение скриншотом как на карте */
 .ymap-container {
   position: relative;
@@ -2759,6 +2817,7 @@ button {
   width: 100%;
   height: 700px;
   max-height: 100%;
+  overflow: auto;
 }
 
 .popup-call__image {
@@ -2773,7 +2832,6 @@ button {
 }
 
 .popup-call__content {
-  overflow: auto;
   width: 100%;
   height: 100%;
   padding: 82px 80px 50px;

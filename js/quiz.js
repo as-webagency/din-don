@@ -111,24 +111,35 @@ dotsTop.forEach((dot) => {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  answersObj.step4.phone = document.getElementById("quiz-phone").value;
-  answersObj.step4.email = document.getElementById("quiz-email").value;
+  const phoneInput = document.getElementById("quiz-phone");
+  const emailInput = document.getElementById("quiz-email");
 
-  postData(answersObj)
-    .then((res) => res.json())
-    .then((res) => {
-      if (res.result === "success") {
-        overlay.style.display = "block";
-        popupThanks.style.display = "block";
-        form.reset();
-      } else {
-        alert(res.status);
-      }
+  answersObj.step4.phone = phoneInput.value;
+  answersObj.step4.email = emailInput.value;
 
-      $('.popup-thanks__close, .overlay').click(function () {
-        $('.popup-thanks, .overlay').fadeOut();
+  if (phoneInput.value === "" || emailInput.value === "") {
+    alert("Введите данные формы");
+  } else if(emailInput.classList.contains('error')) {
+    alert("Введите верный email");
+  } else if(phoneInput.classList.contains('error')) {
+    alert("Введите верный номер телефона");
+  } else {
+    postData(answersObj)
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.result === "success") {
+          overlay.style.display = "block";
+          popupThanks.style.display = "block";
+          form.reset();
+        } else {
+          alert(res.status);
+        }
+
+        $(".popup-thanks__close, .overlay").click(function () {
+          $(".popup-thanks, .overlay").fadeOut();
+        });
       });
-    });
+  }
 });
 
 const postData = (body) => {
@@ -148,6 +159,32 @@ inputs.forEach((input) => {
     input.parentNode.classList.remove("active-radio");
   } else if (input.type === "checkbox") {
     input.parentNode.classList.remove("active-checkbox");
+  }
+});
+
+document.getElementById("quiz-email").classList.add('error')
+document.getElementById("quiz-email").addEventListener("input", (e) => {
+  const emailRegExp = /@/;
+
+  if(e.target.value.search(emailRegExp) > 0) {
+    e.target.classList.add('success')
+    e.target.classList.remove('error')
+  } else {
+    e.target.classList.remove('success')
+    e.target.classList.add('error')
+  }
+});
+
+document.getElementById("quiz-phone").classList.add('error')
+document.getElementById("quiz-phone").addEventListener("input", (e) => {
+  const phoneCount = 17;
+
+  if(e.target.value.length === phoneCount) {
+    e.target.classList.add('success')
+    e.target.classList.remove('error')
+  } else {
+    e.target.classList.remove('success')
+    e.target.classList.add('error')
   }
 });
 

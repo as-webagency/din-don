@@ -181,7 +181,7 @@ function map () {
 map();
 
 // Modal - Заказать звонок
-$('.contacts-head__button, .footer-box__button, .for-block__button').click(function(){
+$('.contacts-head__button, .footer-box__button, .for-block__button, .avto-block__button').click(function(){
     $('.overlay, .popup-call').fadeIn();
     $('body').addClass('no_scroll');
 });
@@ -245,10 +245,12 @@ function formValidate(forms) {
                     $(forms)[0].reset();
                     $('.popup-download').fadeOut();
                     $('.popup-call').fadeOut();
-                    $('.popup-thanks').fadeIn();
+                    $('.popup-thanks, .overlay').fadeIn();
+                    $('body').addClass('no_scroll');
 
                     $('.popup-thanks__close, .overlay').click(function(){
                         $('.popup-thanks, .overlay').fadeOut();
+                        $('body').removeClass('no_scroll');
                     });
                 },
                 error: function (response) {
