@@ -509,8 +509,62 @@
             </div>
         </section>
         <section class="collect">
-            <div class="container">
-                <h2 class="title collect__title">Соберите спальное место в одном месте</h2>
+            <h2 class="title collect__title">Соберите спальное место в одном месте</h2>
+            <div class="collect-bg" style="background-image: url('img/collect/collect.webp')" data-bg="img/collect/collect.jpg" data-bg-webp="img/collect/collect.webp">
+                <div class="container">
+                    <div class="collect-blocks">
+                        <div class="collect-block collect-block__item">
+                            <p class="collect-block__text">Кровать</p>
+                            <div class="collect-block__check" style="background-image: url('img/collect/check.webp')" data-bg="img/collect/check.png" data-bg-webp="img/collect/check.webp"></div>
+                        </div>
+                        <div class="collect-block collect-block__item">
+                            <p class="collect-block__text">Постельное белье</p>
+                            <div class="collect-block__check" style="background-image: url('img/collect/check.webp')" data-bg="img/collect/check.png" data-bg-webp="img/collect/check.webp"></div>
+                        </div>
+                        <div class="collect-block collect-block__item">
+                            <p class="collect-block__text">Матрас</p>
+                            <div class="collect-block__check" style="background-image: url('img/collect/check.webp')" data-bg="img/collect/check.png" data-bg-webp="img/collect/check.webp"></div>
+                        </div>
+                        <div class="collect-block collect-block__item">
+                            <p class="collect-block__text">Дизайнерское украшение
+                                под интерьер комнаты</p>
+                            <div class="collect-block__check" style="background-image: url('img/collect/check.webp')" data-bg="img/collect/check.png" data-bg-webp="img/collect/check.webp"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="collect-bottom">
+                <div class="container">
+                    <div class="collect-items">
+                        <div class="collect-item">
+                            <div class="collect-item__image" style="background-image: url('img/collect/mocap.webp')" data-bg="img/collect/mocap.png" data-bg-webp="img/collect/mocap.webp"></div>
+                        </div>
+                        <div class="collect-item">
+                            <div class="collect-item__title">Скачайте каталог со всем
+                                ассортиментом магазина</div>
+                            <form action="send.php" class="collect-form collect-item__form" method="post">
+                                <div class="collect-form__group">
+                                    <div class="collect-form__icon"></div>
+                                    <input type="name" name="user_name" placeholder="Ваше имя" class="input collect-form__input input--primary">
+                                </div>
+                                <div class="collect-form__group">
+                                    <div class="collect-form__icon"></div>
+                                    <input type="tel" name="user_phone" placeholder="Ваш телефон" class="input collect-form__input input--primary">
+                                </div>
+                                <button class="button collect-form__button button--primary">
+                                    <span class="button__icon"></span>
+                                    <span class="button__text">Скачать каталог с ценами</span>
+                                </button>
+                                <div class="collect-form__group">
+                                    <div class="policy">
+                                        <input type="checkbox" class="policy__checkbox" id="policy-checkbox-call_3" name="user_checkbox_3" checked>
+                                        <label for="policy-checkbox-call_3" class="policy__label">Вы соглашаетесь на&thinsp;<a href="#" class="policy__link">условия обработки персональных данных</a></label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -623,7 +677,6 @@
         </div>
     </div>
 
-    <!-- src="" data- -->
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="./js/quiz.js"></script>
     <script src="./js/script.js"></script>

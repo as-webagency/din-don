@@ -181,7 +181,7 @@ function map () {
 map();
 
 // Modal - Заказать звонок
-$('.contacts-head__button, .footer-box__button').click(function(){
+$('.contacts-head__button, .footer-box__button, .for-block__button').click(function(){
     $('.overlay, .popup-call').fadeIn();
     $('body').addClass('no_scroll');
 });
@@ -260,6 +260,7 @@ function formValidate(forms) {
 }
 formValidate('.form-download');
 formValidate('.form-call');
+formValidate('.collect-form');
 
 // Slider For
 const sliderFor = () => {

@@ -679,7 +679,9 @@ button {
 }
 
 #user_name-error,
-#user_phone-error {
+#user_phone-error,
+#quiz-email-error,
+#quiz-phone-error {
   position: absolute;
   bottom: -18px;
   left: 0;
@@ -705,7 +707,7 @@ button {
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 30;
+  z-index: 120;
 }
 
 .header--primary {
@@ -2172,6 +2174,200 @@ button {
   position: absolute;
 }
 
+.collect {
+  padding: 121px 0 170px;
+}
+
+.collect__title {
+  margin: 0 0 26px 17px;
+}
+
+.collect-bg {
+  width: 100%;
+  min-height: 1285px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.collect-block__item {
+  border-radius: 10px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 11px 45.54px 0.46px rgba(184, 184, 184, 0.47);
+          box-shadow: 0px 11px 45.54px 0.46px rgba(184, 184, 184, 0.47);
+  max-width: 250px;
+  position: relative;
+}
+
+.collect-block__item:nth-child(1) {
+  -webkit-transform: translate(90%, 557%);
+      -ms-transform: translate(90%, 557%);
+          transform: translate(90%, 557%);
+  max-width: 240px;
+  padding: 30px 20px 31px 38px;
+}
+
+.collect-block__item:nth-child(1) .collect-block__check {
+  top: 4px;
+  right: -34px;
+}
+
+.collect-block__item:nth-child(2) {
+  -webkit-transform: translate(298%, 353%);
+      -ms-transform: translate(298%, 353%);
+          transform: translate(298%, 353%);
+  padding: 30px 20px 30px 107px;
+  max-width: 320px;
+}
+
+.collect-block__item:nth-child(2) .collect-block__check {
+  top: 4px;
+  left: -25px;
+}
+
+.collect-block__item:nth-child(3) {
+  -webkit-transform: translate(125%, 833%);
+      -ms-transform: translate(125%, 833%);
+          transform: translate(125%, 833%);
+  padding: 31px 20px 30px 39px;
+}
+
+.collect-block__item:nth-child(3) .collect-block__check {
+  top: 4px;
+  right: -25px;
+}
+
+.collect-block__item:nth-child(4) {
+  -webkit-transform: translate(241%, 511%);
+      -ms-transform: translate(241%, 511%);
+          transform: translate(241%, 511%);
+  padding: 30px 50px 30px 40px;
+  max-width: 380px;
+}
+
+.collect-block__item:nth-child(4) .collect-block__check {
+  top: 15px;
+  right: -48px;
+}
+
+.collect-block__text {
+  font-size: 20px;
+  line-height: 30px;
+  color: #484848;
+  font-weight: 600;
+}
+
+.collect-block__check {
+  position: absolute;
+  width: 112px;
+  height: 112px;
+  background-repeat: no-repeat;
+  top: 0;
+  right: 0;
+}
+
+.collect-bottom {
+  padding-top: 150px;
+}
+
+.collect-item {
+  position: relative;
+}
+
+.collect-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.collect-item__image {
+  background-repeat: no-repeat;
+  min-width: 1446px;
+  max-width: 1446px;
+  width: 100%;
+  min-height: 1059px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(-71%, -15%);
+      -ms-transform: translate(-71%, -15%);
+          transform: translate(-71%, -15%);
+}
+
+.collect-item:nth-child(2) {
+  background-color: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 11px 45.54px 0.46px rgba(184, 184, 184, 0.25);
+          box-shadow: 0px 11px 45.54px 0.46px rgba(184, 184, 184, 0.25);
+  max-width: 597px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  -webkit-transform: translateX(-17%);
+      -ms-transform: translateX(-17%);
+          transform: translateX(-17%);
+  padding: 85px 57px 66px;
+}
+
+.collect-item__title {
+  font-size: 34px;
+  line-height: 51px;
+  color: #484848;
+  font-weight: 600;
+  margin-bottom: 60px;
+}
+
+.collect-form__form {
+  max-width: 483px;
+}
+
+.collect-form__group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.collect-form__group:nth-child(1) .collect-form__icon {
+  background: url(../img/user.svg) no-repeat;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 34px;
+  left: 37px;
+}
+
+.collect-form__group:nth-child(2) .collect-form__icon {
+  background: url(../img/phone-call.svg) no-repeat;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 34px;
+  left: 37px;
+}
+
+.collect-form__input {
+  height: 89px;
+}
+
+.collect-form__button {
+  position: relative;
+  margin: 35px 0 5px;
+}
+
+.collect-form__button span {
+  position: relative;
+  z-index: 3;
+  margin: 0 auto;
+}
+
+.collect-form__button .button__icon {
+  margin-right: -22px;
+}
+
 /* &#34;Блок-обертка&#34;, где мы задаем фоновое изображение скриншотом как на карте */
 .ymap-container {
   position: relative;
@@ -2417,7 +2613,7 @@ button {
   background-color: rgba(130, 156, 176, 0.6);
   width: 100%;
   height: 100%;
-  z-index: 50;
+  z-index: 150;
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s;
@@ -2430,7 +2626,7 @@ button {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  z-index: 60;
+  z-index: 160;
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s;

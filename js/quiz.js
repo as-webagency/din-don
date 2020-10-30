@@ -7,6 +7,8 @@ const dotsTop = document.querySelectorAll(".quiz-count__number");
 const inputs = form.querySelectorAll("input");
 const inputsBlock = form.querySelectorAll(".form-quiz__group");
 const backImageBlock = document.querySelector(".quiz-block__image");
+const popupThanks = document.querySelector(".popup-thanks");
+const overlay = document.querySelector(".overlay");
 
 const answersObj = {
   step0: {
@@ -115,14 +117,17 @@ form.addEventListener("submit", (e) => {
   postData(answersObj)
     .then((res) => res.json())
     .then((res) => {
-      if (res["status"] === "ok") {
-        overlay.style.display = "none";
-        quiz.style.display = "none";
+      if (res.result === "success") {
+        overlay.style.display = "block";
+        popupThanks.style.display = "block";
         form.reset();
-        alert(res["message"]);
-      } else if (res["status"] === "error") {
-        alert(res["message"]);
+      } else {
+        alert(res.status);
       }
+
+      $('.popup-thanks__close, .overlay').click(function () {
+        $('.popup-thanks, .overlay').fadeOut();
+      });
     });
 });
 
