@@ -2935,6 +2935,7 @@ body.compensate-for-scrollbar {
   -webkit-transition: background-color 0.2s ease;
   -o-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
+  background-color: transparent;
 }
 
 .for-slider-content-btn.prev {
