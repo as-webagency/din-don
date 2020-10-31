@@ -4287,4 +4287,174 @@ body.compensate-for-scrollbar {
 .form-download__input, .form-call__input {
   height: 88px;
 }
+
+@media screen and (max-width: 900px) {
+  .popup-call__image {
+    background-position: 130px 93px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .popup-download__image, .popup-call__image {
+    display: none;
+  }
+  .popup-download__title, .popup-call__title {
+    margin: 0 auto 60px;
+  }
+  .popup-download__form, .popup-call__form {
+    margin: 0 auto;
+  }
+  .popup-call__content {
+    padding: 70px 10px 30px;
+  }
+  .popup-call__title {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .popup-download__content {
+    padding: 70px 10px 30px;
+  }
+  .popup-call {
+    height: 640px;
+  }
+  .popup-call__title {
+    font-size: 26px;
+    line-height: 34px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .popup-thanks {
+    height: 560px;
+  }
+  .popup-thanks__content {
+    padding: 80px 20px 20px;
+  }
+  .popup-thanks__title {
+    font-size: 20px;
+    line-height: 27px;
+    max-width: 300px;
+  }
+  .popup-download {
+    height: 660px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .popup-download {
+    height: 600px;
+  }
+  .popup-download__title {
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    max-width: 300px;
+  }
+  .popup-download__form {
+    max-width: 300px;
+  }
+  .popup-call {
+    height: 600px;
+  }
+  .popup-call__title {
+    font-size: 20px;
+    line-height: 27px;
+  }
+  .popup-call__form {
+    max-width: 300px;
+  }
+  .form-download__button, .form-call__button {
+    padding: 32px 10px 36px;
+  }
+  .form-download__button span, .form-call__button span {
+    font-size: 16px;
+  }
+  .form-download__group .policy__label, .form-call__group .policy__label {
+    font-size: 12px;
+    display: inline;
+    float: right;
+  }
+  .form-download__group .policy__label::before, .form-call__group .policy__label::before {
+    float: left;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .popup-thanks {
+    height: 540px;
+  }
+  .popup-thanks__link {
+    max-width: 300px;
+  }
+  .popup-thanks__close {
+    top: 25px;
+    right: 25px;
+  }
+  .popup-thanks__content {
+    padding: 80px 10px 20px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .popup .input {
+    padding: 0 14px 0 64px;
+    font-size: 16px;
+  }
+  .popup-thanks__close {
+    top: 18px;
+    right: 18px;
+  }
+  .popup-thanks__content {
+    padding: 70px 10px 20px;
+  }
+  .popup-thanks__title {
+    margin: 0 auto 33px;
+  }
+  .popup-thanks__image {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 40px;
+  }
+  .popup-thanks__link {
+    height: 90px;
+  }
+  .popup-download {
+    height: 570px;
+  }
+  .popup-download__close {
+    top: 18px;
+    right: 20px;
+  }
+  .popup-download__title {
+    margin: 0 auto 40px;
+  }
+  .popup-call__close {
+    top: 18px;
+    right: 20px;
+  }
+  .popup-call__title {
+    margin: 0 auto 40px;
+    font-size: 18px;
+  }
+  .form-download__group, .form-call__group {
+    margin-bottom: 11px;
+  }
+  .form-download__group:nth-child(1) .form-download__icon, .form-call__group:nth-child(1) .form-download__icon {
+    left: 28px;
+  }
+  .form-download__group:nth-child(2) .form-download__icon, .form-call__group:nth-child(2) .form-download__icon {
+    left: 28px;
+  }
+  .form-download__button, .form-call__button {
+    margin: 28px 0 0px;
+  }
+  .form-download .policy__label::before, .form-call .policy__label::before {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    margin-left: 15px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
