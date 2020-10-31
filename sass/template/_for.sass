@@ -187,42 +187,46 @@
             width: 100%
             position: relative
             padding: 38px 35px 35px 37px
+            opacity: 0
+        &__inner
+            max-width: 360px
+            width: 100%
+            position: relative
             &:nth-child(1)
-                transform: translate(41%, 168%)
+                transform: translate(41%, 160%)
                 .for-box
+                    &__item
+                        padding: 42px 30px 37px 37px
                     &__plus
-                        top: 58px
-                        right: -60px
+                        transform: translate(271%, 55%)
             &:nth-child(2)
-                transform: translate(-34%, 72%)
-                margin-left: auto
-                padding: 39px 30px 43px 53px
+                transform: translate(296%, 64%)
                 .for-box
+                    &__item
+                        padding: 39px 28px 47px 55px
                     &__plus
-                        top: 46px
-                        left: -57px
+                        transform: translate(-45%, 41%)
             &:nth-child(3)
-                transform: translate(112%, 103%)
-                padding: 38px 25px 40px 46px
+                transform: translate(115%, 95%)
                 .for-box
+                    &__item
+                        padding: 38px 20px 42px 37px
                     &__plus
-                        top: 55px
-                        right: -58px
+                        transform: translate(264%, 48%)
             &:nth-child(4)
-                transform: translate(53%, 126%)
-                padding: 38px 35px 30px 18px
+                transform: translate(64%, 120%)
                 .for-box
+                    &__item
+                        padding: 38px 35px 30px 30px
                     &__plus
-                        top: 56px
-                        right: -60px
+                        transform: translate(270%, 50%)
             &:nth-child(5)
-                transform: translate(-33%, 4%)
-                margin-left: auto
-                padding: 38px 35px 35px 53px
+                transform: translate(298%, -2%)
                 .for-box
+                    &__item
+                        padding: 38px 35px 35px 53px
                     &__plus
-                        top: 55px
-                        left: -57px
+                        transform: translate(-50%, 50%)
         &__title
             font-size: 20px
             line-height: 27px
@@ -240,3 +244,8 @@
             width: 112px
             height: 112px
             position: absolute
+            z-index: 10
+            &:hover + .for-box
+                &__item
+                    opacity: 1
+                    transition: opacity .4s ease-in-out

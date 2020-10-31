@@ -206,7 +206,7 @@ $('.overlay, .popup-call__close').click(function(){
 });
 
 // Modal - Скачать каталог с ценами
-$('.hero-side__button').click(function(){
+$('.hero-side__button, .cards__button').click(function(){
     $('.overlay, .popup-download').fadeIn();
     $('body').addClass('no_scroll');
 });
@@ -487,3 +487,23 @@ const sliderVideo = () => {
     startSlide(2500);
 };
 sliderVideo();
+
+
+$(document).ready(function () {
+    toolTiper();
+});
+
+function toolTiper(effect) {
+    $('.tooltiper').hover(function () {
+        var eLcontent = $(this).attr('data-tooltip'),
+            eLtop = $(this).position().top,
+            eLleft = $(this).position().left;
+        $(this).append('<span class="tooltip">' + eLcontent + '</span>');
+        var eLtw = $(this).find('.tooltip').width(),
+            eLth = $(this).find('.tooltip').height();
+        $(this).find('.tooltip').css({
+            "top": (0 - eLth - 15) + 'px',
+            "left": '-60px'
+        });
+    });
+}
