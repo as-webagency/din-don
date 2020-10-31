@@ -1,4 +1,81 @@
+@media screen and ( max-width: 1380px )
+    .phone
+        font-size: 20px
+    .header
+        padding: 40px 0
+        &__contacts
+            max-width: 500px
+        &__logo
+            margin-left: 0
+    .menu
+        &__nav
+            margin: 15px 0 0 0
+    .contacts
+        &-head
+            &__button
+                margin: 0
+@media screen and ( max-width: 1300px )
+    .header
+        &__contacts
+            max-width: none
+            width: auto
+    .contacts
+        &-head
+            &__phone
+                display: none
+@media screen and ( max-width: 1060px )
+    .header
+        padding: 25px 0
+        &::before
+            content: ''
+            width: 100%
+            height: 100%
+            position: absolute
+            top: 0
+            left: 0
+            background-color: $white
+            z-index: 20
+        &__contacts
+            display: none
+        &__phone
+            display: block
+            margin-top: 5px
+            position: relative
+            z-index: 20
+            transform: translateX(480%)
+        &__burger
+            margin-top: 14px
+        &__logo
+            position: relative
+            z-index: 120
+        &__burger
+            z-index: 120
+    .menu
+        &__wrap
+            padding-top: 125px
+            position: fixed
+            top: 0
+            left: -100%
+            width: 100%
+            height: 100%
+            background-color: $white
+            margin: 0
+            transition: .3s
+            overflow: auto
+    .nav
+        &__list
+            flex-direction: column
+        &__item
+            margin: 0
+        &__link
+            display: block
+            padding: 15px 10px 15px 25px
+            &::before
+                display: none
 @media screen and ( max-width: 900px )
+    .header
+        &__phone
+            transform: translateX(300%)
     .popup
         &-call
             &__image
@@ -18,6 +95,10 @@
                 padding: 70px 10px 30px
             &__title
                 text-align: center
+@media screen and ( max-width: 700px )
+    .header
+        &__phone
+            transform: translateX(100%)
 @media screen and ( max-width: 615px )
     .popup
         &-download
@@ -40,6 +121,16 @@
                 max-width: 300px
         &-download
             height: 660px
+@media screen and ( max-width: 500px )
+    .header
+        padding: 20px 0
+        &__logo
+            width: 117px
+            height: 30px
+        &__phone
+            margin: 0
+        &__burger
+            margin-top: 8px
 @media screen and ( max-width: 480px )
     .popup
         &-download
@@ -73,7 +164,6 @@
                         float: right
                         &::before
                             float: left
-        
 @media screen and ( max-width: 425px )
     .popup
         &-thanks
@@ -85,7 +175,19 @@
                 right: 25px
             &__content
                 padding: 80px 10px 20px
+    .menu
+        &__wrap
+            padding-top: 75px
 @media screen and ( max-width: 375px )
+    .header
+        padding: 19px 0
+        .container
+            padding: 0 9px
+        &__phone
+            transform: translateX(-25%)
+        &__burger
+            width: 25px
+            right: 15px
     .popup
         .input
             padding: 0 14px 0 64px

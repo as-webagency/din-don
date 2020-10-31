@@ -195,7 +195,7 @@ function map () {
 map();
 
 // Modal - Заказать звонок
-$('.contacts-head__button, .footer-box__button, .for-block__button, .avto-block__button, .video__button').click(function(){
+$('.contacts-head__button, .footer-box__button, .for-block__button, .avto-block__button, .video__button, .header__phone').click(function(){
     $('.overlay, .popup-call').fadeIn();
     $('body').addClass('no_scroll');
 });
@@ -278,8 +278,13 @@ formValidate('.form-download');
 formValidate('.form-call');
 formValidate('.collect-form');
 
+$('.header__burger').click(function () {
+    $('.header__burger, .menu__wrap').toggleClass('active');
+    $('body').toggleClass('no_scroll');
+});
+
 // Slider For
-const sliderFor = () => {
+/*const sliderFor = () => {
 
     const slide = document.querySelectorAll('.for-slider-content__item'),
         slider = document.querySelector('.for-slider-content');
@@ -381,10 +386,10 @@ const sliderFor = () => {
 
     startSlide(2500);
 };
-sliderFor();
+sliderFor();*/
 
 // Slider Video
-const sliderVideo = () => {
+/*const sliderVideo = () => {
 
     const slide2 = document.querySelectorAll('.video-slider-content__item'),
         slider2 = document.querySelector('.video-slider-content');
@@ -486,24 +491,5 @@ const sliderVideo = () => {
 
     startSlide(2500);
 };
-sliderVideo();
+sliderVideo();*/
 
-
-$(document).ready(function () {
-    toolTiper();
-});
-
-function toolTiper(effect) {
-    $('.tooltiper').hover(function () {
-        var eLcontent = $(this).attr('data-tooltip'),
-            eLtop = $(this).position().top,
-            eLleft = $(this).position().left;
-        $(this).append('<span class="tooltip">' + eLcontent + '</span>');
-        var eLtw = $(this).find('.tooltip').width(),
-            eLth = $(this).find('.tooltip').height();
-        $(this).find('.tooltip').css({
-            "top": (0 - eLth - 15) + 'px',
-            "left": '-60px'
-        });
-    });
-}
