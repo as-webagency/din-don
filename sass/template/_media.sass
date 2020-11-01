@@ -23,6 +23,41 @@
         &-head
             &__phone
                 display: none
+@media screen and ( max-width: 1200px )
+    .hero
+        &__bg
+            min-height: 1000px
+        &-side
+            &__left
+                margin-left: 0
+            &__title
+                font-size: 44px
+                line-height: 60px
+                max-width: 500px
+            &__text
+                margin: 0 0 69px 0
+            &__button
+                margin: 0 0 80px 0
+            &__right
+                background-position: -500px 0
+    .advans
+        max-width: 500px
+        display: block
+        &-block
+            margin-bottom: 20px
+            &__item
+                &:nth-child(2)
+                    position: relative
+                    left: -80px
+                &:nth-child(3)
+                    margin-left: 10px
+@media screen and ( max-width: 1100px )
+    .hero
+        &-side
+            &__right
+                background-position: 70% 0
+                background-size: cover
+                max-width: 900px
 @media screen and ( max-width: 1060px )
     .header
         padding: 25px 0
@@ -72,6 +107,15 @@
             padding: 15px 10px 15px 25px
             &::before
                 display: none
+    .hero
+        &-side
+            &__right
+                background-position: 60% 0
+@media screen and ( max-width: 950px )
+    .hero
+        &-side
+            &__right
+                background-position: 50% 0
 @media screen and ( max-width: 900px )
     .header
         &__phone
@@ -81,6 +125,34 @@
             &__image
                 background-position: 130px 93px
 @media screen and ( max-width: 768px )
+    .hero
+        &-side
+            &__right
+                background-size: contain
+                max-width: 100%
+                background-position: center
+                min-height: 530px
+                top: 0
+                right: auto
+                left: 50%
+                transform: translateX(-70%)
+            &__left
+                max-width: 500px
+                margin: 0 auto
+                padding-top: 270px
+            &__title,
+            &__text
+                box-shadow: 0px 0px 15px 3px rgba($bg, .7)
+                background-color: rgba($bg, .7)
+            &__button
+                margin: 0 auto 80px
+    .advans
+        +flex
+        flex-direction: column
+        &-block
+            &__item
+                &:nth-child(2)
+                    left: -40px
     .popup
         &-download,
         &-call
@@ -110,6 +182,30 @@
                 font-size: 26px
                 line-height: 34px
 @media screen and ( max-width: 540px )
+    .hero
+        &-side
+            &__right
+                background-size: 130% 75%
+                transform: translateX(-75%)
+            &__title
+                font-size: 30px
+                line-height: 40px
+                max-width: none
+
+            &__left
+                max-width: 340px
+                padding-top: 320px
+            &__text
+                font-size: 17px
+            &__button
+                padding: 32px 35px 36px
+                margin: 0 auto 50px
+                .button
+                    &__icon
+                        display: none
+                    &__text
+                        margin: 0 auto
+                        font-size: 16px
     .popup
         &-thanks
             height: 560px
@@ -122,6 +218,13 @@
         &-download
             height: 660px
 @media screen and ( max-width: 500px )
+    .hero
+        &-side
+            &__left
+                padding-top: 270px
+            &__right
+                top: -45px
+                background-size: 135% 70%
     .header
         padding: 20px 0
         &__logo
@@ -165,6 +268,15 @@
                         &::before
                             float: left
 @media screen and ( max-width: 425px )
+    .hero
+        &__bg
+            min-height: 930px
+        &-side
+            &__right
+                top: -50px
+                background-size: 137% 67%
+            &__left
+                padding-top: 250px
     .popup
         &-thanks
             height: 540px
@@ -178,16 +290,41 @@
     .menu
         &__wrap
             padding-top: 75px
+@media screen and ( max-width: 400px )
+    .hero
+        &-side
+            &__right
+                background-size: 160%
+                background-position: -153px
+                transform: translateX(-72%)
 @media screen and ( max-width: 375px )
+    .container
+        padding: 0 10px
+    .hero
+        &-side
+            &__right
+                top: -48px
+                background-size: 200%
+                background-position: -283px
+                transform: translateX(-61%)
+            &__title
+                font-size: 26px
+                line-height: 37px
+                margin: 18px 0 26px
+            &__text
+                font-size: 15px
+                margin: 0 0 38px 0
+            &__left
+                max-width: 300px
+                padding-top: 225px
     .header
         padding: 19px 0
         .container
             padding: 0 9px
         &__phone
-            transform: translateX(-25%)
+            transform: translateX(-5%)
         &__burger
             width: 25px
-            right: 15px
     .popup
         .input
             padding: 0 14px 0 64px
@@ -244,3 +381,16 @@
                         height: 15px
                         margin-right: 5px
                         margin-left: 15px
+@media screen and ( max-width: 345px )
+    .hero
+        &-side
+            &__right
+                transform: translateX(-56%)
+@media screen and ( max-width: 320px )
+    .hero
+        &-side
+            &__right
+                top: -68px
+                background-size: 210%
+                background-position: -263px
+                transform: translateX(-65%)
