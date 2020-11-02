@@ -282,3 +282,10 @@ $('.header__burger').click(function () {
     $('.header__burger, .menu__wrap').toggleClass('active');
     $('body').toggleClass('no_scroll');
 });
+
+if (screen.width < 1060) {
+    $('.nav__link').click(function() {
+        $('.header__burger, .menu__wrap').toggleClass('active');
+        $('body').toggleClass('no_scroll');
+    });
+}
